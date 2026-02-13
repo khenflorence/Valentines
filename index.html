@@ -83,7 +83,7 @@
             font-size: 1.2rem;
             cursor: pointer;
             box-shadow: 0 0 20px rgba(255, 77, 77, 0.4);
-            transition: all 0.3s ease; /* Smooth growing effect */
+            transition: all 0.3s ease;
             z-index: 100;
         }
 
@@ -120,7 +120,8 @@
     <section>
         <div class="card">
             <p>You are the first thought I have in the morning and the warmest one I carry through the day.</p>
-            <p>I know I'm an Aerospace Engineering student — more comfortable with circuits and physics than with poetry — but even I know that what I feel for you is something I never want to debug or rewrite. It's exactly right, just the way it is.</p>
+            <p>I may not always have the perfect words to say, but I want you to know that having you in my life is the best thing that has ever happened to me. Every moment with you feels right, and I never want that to change.</p>
+            <p>So this Valentine's Day, I made you this little corner of the internet — just for you, just from me — because you deserve to feel as extraordinary as you truly are.</p>
             <div class="divider"></div>
             <p class="signature">Forever yours,<br><span>Love love</span> 🌷</p>
         </div>
@@ -162,22 +163,18 @@
         noBtn.addEventListener('mouseover', () => {
             noCount++;
             
-            // 1. Move the No button away
             const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
             const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
             noBtn.style.position = 'fixed';
             noBtn.style.left = `${x}px`;
             noBtn.style.top = `${y}px`;
 
-            // 2. Make the Yes button bigger
             yesSize += 0.4;
             yesBtn.style.transform = `scale(${yesSize})`;
 
-            // 3. Update Yes button text based on count
             if (noCount === 3) yesBtn.innerText = "Please say say say! 🌷";
             if (noCount >= 5) yesBtn.innerText = "PLEASE JUST CLICK ME ❤️";
             
-            // Update No button text to be more persuasive
             if (noCount < phrases.length) {
                 noBtn.innerText = phrases[noCount];
             }
